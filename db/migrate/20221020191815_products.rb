@@ -4,7 +4,6 @@ class Products < ActiveRecord::Migration[7.0]
       t.column(:name, :string)
       t.column(:country_of_origin, :string)
       t.column(:cost, :integer)
-      t.column(:review_id, :integer)
 
       t.timestamps()
     end
