@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  
 
   def index
     @products = Product.all
@@ -13,9 +14,9 @@ class ProductsController < ApplicationController
   def create
    @product = Product.new(product_params)
    if @product.save
-   redirect_to product_path
+   redirect_to products_path
    else
-     render :new
+     render :show
    end
   end
 
@@ -46,8 +47,8 @@ class ProductsController < ApplicationController
   end
 
   private
-  def album_params
+  def product_params
     params.require(:product).permit(:name, :country_of_origin, :cost)
   end
-
+  
 end
