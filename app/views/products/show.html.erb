@@ -2,19 +2,22 @@
 <h3>country of origin: <%= @product.country_of_origin %></h3>
 <h3>cost: $  <%= @product.cost %></h3>
 
+
 <% if @product.reviews.any? %>
-  <h4>reviews for this item</h4>
+  <h4>Here are all of the reviews for this product:</h4>
+  <p>click on a review to see further details</p>
 
   <% @product.reviews.each do |review| %>
     <ul>
       <li>
-        <p> <%= link_to  review.content_body, product_review_path(@product, review) %> 
+        <%= link_to review.content_body, product_review_path(@product, review) %>
       </li>
     </ul>
   <% end %>
 <% else %>
-  <p>there are no reviews for this item</p>
+  <p>No reviews are listed for this product if you have tried this product please leave us a review!</p>
 <% end %>
+  
 <%= button_to "Add a review for this product", 
               new_product_review_path(@product),
               method: :get %>
@@ -23,6 +26,10 @@
 
 <%= button_to "Edit product", 
               edit_product_path(@product),
+              method: :get %>
+
+<%= button_to "view list of reviews for this product", 
+              product_review_path(@product),
               method: :get %>
 
 <%= button_to "Delete product", 
