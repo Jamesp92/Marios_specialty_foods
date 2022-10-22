@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
     flash[:notice] = "product successfully created!"
    redirect_to products_path
    else
-     render :show
+    render :new, status: :unprocessable_entity
    end
   end
 

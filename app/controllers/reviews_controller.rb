@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "review successfully added!"
       redirect_to product_path(@product)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -43,7 +43,7 @@ class ReviewsController < ApplicationController
     flash[:notice] = "review successfully updated!"
     redirect_to product_review_path
    else
-     render :edit
+    render :edit 
    end
   end
 
