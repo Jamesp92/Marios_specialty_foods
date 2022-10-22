@@ -37,7 +37,7 @@ The ouput should start with something like `ruby 2.5.1`
 If not, install the right ruby version using [rbenv](https://github.com/rbenv/rbenv) (it could take a while):
 
 ```shell
-rbenv install 2.5.1
+rbenv install ruby 3.1.2
 ```
 
 ### Install dependencies
