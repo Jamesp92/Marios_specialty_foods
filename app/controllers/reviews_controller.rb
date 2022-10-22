@@ -2,7 +2,9 @@ class ReviewsController < ApplicationController
   
 
   def index
-    @reviews = Review.all
+    @local_foods = Product.local_foods
+    @recently_added = Product.most_recent
+    @most_reviewed_products = Product.most_reviews
     render :index
   end
 

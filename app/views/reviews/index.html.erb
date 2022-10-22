@@ -2,7 +2,41 @@
 
 <p> here you will find a wide variety of food that i create myself .
  feel free to look around and leave an honest review of my delicious foods !</p>
+    
+      <h4>Top 3 Recently Added Products</h4>
+  <% if @recently_added.any? %>
+    <ul>
+    <% @recently_added.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+    </ul>
+  <% else %>
+    <p>no products yet!</p>
+  <% end %>
 
+    <h4>Most Reviewed Product</h4>
+  <% if @most_reviewed_products.any? %>
+    <ul>
+    <% @most_reviewed_products.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+    </ul>
+  <% else %>
+    <p>Looks like there aren't any reviewed products, yet.</p>
+  <% end %>
+  
+  
+  <h4>Shop Locally!</h4>
+  <h5>All Products from the USA</h5>
+  <% if @local_foods.any? %>
+    <ul>
+    <% @local_foods.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+    </ul>
+  <% else %>
+    <p>Sorry, no products from the USA today.</p>
+  <% end %>
 
  <%= button_to "view a list of all products here!", 
               products_path,
