@@ -22,7 +22,7 @@ Epicodus solo project that demonstrates use of ruby on rails , allows users to a
 ### Clone the repository
 
 ```shell
-git clone git@github.com:juliendargelos/project.git
+git clone https://github.com/Jamesp92/Marios_specialty_foods
 cd project
 ```
 
