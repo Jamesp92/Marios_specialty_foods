@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
-  
-
+  before_action :authorize_admin, only: [:destroy , :edit ]
   def index
     @local_foods = Product.local_foods
     @recently_added = Product.most_recent
